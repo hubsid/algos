@@ -6,7 +6,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sidh.practice.algo.sequenceGenerator.abs.ISequenceSupplier;
 import com.sidh.practice.algo.sequenceGenerator.interfaces.ISequenceStore;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -18,7 +17,8 @@ public class FileObjectMapperSequenceSupplier extends ISequenceSupplier {
     protected List<List<Integer>> parse(ISequenceStore store) {
         String sequence = store.getSequence();
         try {
-            return objectMapper.readValue(sequence, new TypeReference<LinkedList<List<Integer>>>() {});
+            return objectMapper.readValue(sequence, new TypeReference<LinkedList<List<Integer>>>() {
+            });
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }

@@ -1,6 +1,5 @@
 package com.sidh.practice.algo.sequenceGenerator;
 
-import java.security.cert.TrustAnchor;
 import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
@@ -78,15 +77,14 @@ public class Generator {
                         nextPair.add(farthest);
                         iterator.next();
                         iterator.remove();
-                    }
-                    else
+                    } else
                         iterator.next();
                 }
                 break;
             }
         }
         List<Integer> lastPair = sequenceList.get(sequenceList.size() - 1);
-        if(lastPair.size() == 2) {
+        if (lastPair.size() == 2) {
             int firstElem = lastPair.get(0);
             lastPair.clear();
             lastPair.add(firstElem);
